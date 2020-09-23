@@ -1,5 +1,6 @@
 # Homework
 Author: Joseph Berlucchi
+Email: joeberlucchi2019@gmail.com
 ## Table of Contents (edu.miracosta.cs113):
 | Name | Location | Description | Created At | Due Date |
 |------|----------|-------------|------------|------------|

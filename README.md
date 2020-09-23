@@ -1,4 +1,8 @@
 # Homework
 Author: Joseph Berlucchi
 ## Table of Contents (edu.miracosta.cs113):
-- lab4 : 2 parts, last updated: 2/23/2020
+| Name | Location | Description | Created At | Updated at |
+|------|----------|-------------|------------|------------|
+|Lab4  |edu.miracosta.cs113|             |            |            |
+|      |          |             |            |            |
+|      |          |             |            |            |

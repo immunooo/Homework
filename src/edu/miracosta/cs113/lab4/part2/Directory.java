@@ -1,4 +1,4 @@
-package Lab4pt2;
+package edu.miracosta.cs113.lab4.part2;
 
 import java.util.ArrayList;
 /**

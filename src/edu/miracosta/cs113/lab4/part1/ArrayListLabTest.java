@@ -1,4 +1,4 @@
-package Lab4pt1;
+package edu.miracosta.cs113.lab4.part1;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;

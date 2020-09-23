@@ -1,4 +1,4 @@
-package Lab4pt2;
+package edu.miracosta.cs113.lab4.part2;
 /**
  * DirectoryEntry.java: Base class for data type representing an entry in a phone book
  * 

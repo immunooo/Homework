@@ -1,4 +1,4 @@
-package Lab4pt1;
+package edu.miracosta.cs113.lab4.part1;
 import java.util.ArrayList;
 /**
  * ArrayListLab.java: a program that manipulates values in an arraylist.

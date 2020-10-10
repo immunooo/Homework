@@ -26,7 +26,7 @@ The menu will allow the user to modify, clear, build, and add polynomials repeat
 
 Polynomial Program – UML Class Relationship Diagram
 
-![UML Class Relationship Diagram](https://raw.githubusercontent.com/immunooo/Homework/master/src/edu/miracosta/cs113/homework3/Homework3UML.jpg?token=AKTL3AZJMYGVLBVA5HGNL4S7QINHS)
+![UML Class Relationship Diagram](https://drive.google.com/file/d/1qIjzkcPVK6l-wh2f01RCRm97DQNJShC6/view?usp=sharing)
 
 Polynomial Program – UML Driver Sequence Diagram
 

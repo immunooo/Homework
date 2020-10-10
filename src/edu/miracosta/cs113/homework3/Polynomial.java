@@ -55,7 +55,7 @@ public class Polynomial {
 				terms.get(i).setCoefficient(terms.get(i).getCoefficient() + newTerm.getCoefficient());
 				
 				if(terms.get(i).getCoefficient() == 0) {
-					terms.remove(i);
+					terms.remove(terms.get(i));
 				}
 				
 				return;
@@ -69,6 +69,17 @@ public class Polynomial {
 		terms.add(newTerm);
 		
 	}
+	
+	/**
+	 * adds a term to the linked list from a string
+	 * 
+	 * @param newTerm the term being added to the linked list
+	 * 
+	 */
+	public void addTerm(String newTerm) {
+		addTerm(new Term(newTerm));
+	}
+	
 	
 	/**
 	 * gets the term at the index value

@@ -64,7 +64,7 @@ public class Term implements Comparable{
 			try {
 				coefficient = Integer.parseInt(termCoeficient);
 			} catch(NumberFormatException e) {
-				if(term.indexOf("+") == -1) {
+				if(term.indexOf("-") == 0) {
 					coefficient = -1;
 				} else {
 					coefficient = 1;
@@ -84,10 +84,10 @@ public class Term implements Comparable{
 			try {
 				coefficient = Integer.parseInt(termCoeficient);
 			} catch(NumberFormatException e) {
-				if(term.indexOf("+") == 0) {
-					coefficient = 1;
-				} else {
+				if(term.indexOf("-") == 0) {
 					coefficient = -1;
+				} else {
+					coefficient = 1;
 				}
 			}
 		} else {

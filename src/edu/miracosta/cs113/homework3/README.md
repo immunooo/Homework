@@ -26,11 +26,11 @@ The menu will allow the user to modify, clear, build, and add polynomials repeat
 
 Polynomial Program – UML Class Relationship Diagram
 
-(https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework3/Homework3UML.jpg)
+![UML Class Relationship Diagram](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework3/Homework3UML.jpg)
 
 Polynomial Program – UML Driver Sequence Diagram
 
-(https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework3/homework3UMLSequence.jpg)
+![UML Diver Sequence Diagram](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework3/homework3UMLSequence.jpg)
 
 
 ----------

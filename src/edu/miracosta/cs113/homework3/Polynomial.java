@@ -55,16 +55,17 @@ public class Polynomial {
 				terms.get(i).setCoefficient(terms.get(i).getCoefficient() + newTerm.getCoefficient());
 				
 				if(terms.get(i).getCoefficient() == 0) {
-					terms.remove(terms.get(i));
-				}
+					terms.remove(i);
+				} 
 				
+				//terms.add(i, newTerm);
 				return;
+				
 			} else if(newTerm.compareTo(terms.get(i)) == 1) {
 				
 				terms.add(i, newTerm);
 				return;
-				
-			} 
+			}
 		}
 		terms.add(newTerm);
 		
@@ -105,9 +106,6 @@ public class Polynomial {
 	 */
 	public String toString() {
 		String poly = "";
-		if(getNumTerms() == 0) {
-			return "0";
-		}
 		
 		for(int i = 0; i < terms.size(); i++) {
 			String termTemp = terms.get(i).toString();
@@ -117,6 +115,10 @@ public class Polynomial {
 				continue;
 			} 
 			poly += termTemp;
+		}
+		
+		if(getNumTerms() == 0 || poly.equals("")) {
+			return "0";
 		}
 		return poly;
 	}

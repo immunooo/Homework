@@ -98,7 +98,7 @@ public class Polynomial {
 	}
 	
 	/**
-	 * Full constructor
+	 * converts all terms in the linked list into one string
 	 * 
 	 * @param coefficient sets the coefficient of the term to this value
 	 * @param exponent sets the exponent of the term to this value

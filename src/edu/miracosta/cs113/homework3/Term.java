@@ -52,53 +52,46 @@ public class Term implements Comparable{
 	 * 
 	 */
 	public Term(String term) {
-		if(term.length() == 0) {
+		
+		//Removes spaces in string
+		term = term.replaceAll("\\s", "");
+		
+		String termCoefficient, termExponent;
+		
+		if(term.contains("x")) {
+			
+			termCoefficient = term.substring(0, term.indexOf("x"));
+			
+			if(termCoefficient.equals("-")) {
+				termCoefficient = "-1";
+			}
+			if(term.charAt(0) == '+') {
+				termCoefficient = termCoefficient.substring(1);
+			}
+			
+			if(termCoefficient.equals("")) {
+				termCoefficient = "1";
+			}
+			
+			if(term.contains("^")) {
+				termExponent = term.substring(term.indexOf("^") + 1, term.length());
+			} else {
+				termExponent = "1";
+			}
+			
+		} else {
+			termCoefficient = term;
+			termExponent = "0";
+		}
+		
+		try {
+			coefficient = Integer.parseInt(termCoefficient);
+			exponent = Integer.parseInt(termExponent);
+		} catch (NumberFormatException e){
 			coefficient = 0;
 			exponent = 0;
 		}
-		if(term.contains("x^")) {
-			
-			String termCoeficient = term.substring(0, term.indexOf("x"));
-			String termExponent = term.substring(term.indexOf("^") + 1, term.length());
-			
-			try {
-				coefficient = Integer.parseInt(termCoeficient);
-			} catch(NumberFormatException e) {
-				if(term.indexOf("-") == 0) {
-					coefficient = -1;
-				} else {
-					coefficient = 1;
-				}
-			}
-			
-			try {
-				exponent = Integer.parseInt(termExponent);
-			} catch(NumberFormatException e) {
-				exponent = 1;
-			}
-			
-		} else if(term.contains("x")) {
-			exponent = 1;
-			String termCoeficient = term.substring(0, term.indexOf("x"));
-			
-			try {
-				coefficient = Integer.parseInt(termCoeficient);
-			} catch(NumberFormatException e) {
-				if(term.indexOf("-") == 0) {
-					coefficient = -1;
-				} else {
-					coefficient = 1;
-				}
-			}
-		} else {
-			exponent = 0;
-			try {
-				coefficient = Integer.parseInt(term);
-			} catch(NumberFormatException e) {
-				coefficient = 0;
-			}
-			
-		}
+	
 		
 	}
 	
@@ -221,6 +214,9 @@ public class Term implements Comparable{
 					term += "+";
 				} else {
 					term += "-";
+				}
+				if(exponent == 0) {
+					term += "1";
 				}
 			}
 			

@@ -58,7 +58,6 @@ public class Polynomial {
 					terms.remove(i);
 				} 
 				
-				//terms.add(i, newTerm);
 				return;
 				
 			} else if(newTerm.compareTo(terms.get(i)) == 1) {
@@ -109,7 +108,6 @@ public class Polynomial {
 		
 		for(int i = 0; i < terms.size(); i++) {
 			String termTemp = terms.get(i).toString();
-			
 			if(i == 0 && terms.get(i).getCoefficient() > 0) {
 				poly += termTemp.substring(1, termTemp.length());
 				continue;

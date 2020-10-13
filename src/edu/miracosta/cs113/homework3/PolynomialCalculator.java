@@ -123,11 +123,9 @@ public class PolynomialCalculator {
 		
 			int tempBeginning = 0;
 			for(int i = 0; i < terms.length(); i++) {
-				if( terms.charAt(i) == '-' || terms.charAt(i) == '+') {
-					if(terms.charAt(i) == '-' && i - 1 > 0 ) {
-						if( terms.charAt(i - 1) == '^') {
-							continue;
-						}
+				if( (terms.charAt(i) == '-' || terms.charAt(i) == '+') && i != 0) {
+					if(terms.charAt(i) == '-' && terms.charAt(i - 1) == '^' ) {
+						continue;
 					}
 					poly.addTerm(terms.substring(tempBeginning, i));
 					tempBeginning = i;

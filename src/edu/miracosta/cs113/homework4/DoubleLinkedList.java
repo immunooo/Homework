@@ -206,12 +206,9 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
         }
     
         @Override
-        public boolean hasPrevious() {    	
-        	if(previousIndex() > -1) {
-        		return true;
-        	}
+        public boolean hasPrevious() {    
+        	return size != 0 && (nextItem == null || nextItem.prev != null);
         	
-        	return false;
         }
     
         @Override

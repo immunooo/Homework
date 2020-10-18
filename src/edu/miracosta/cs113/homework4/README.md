@@ -2,7 +2,7 @@
 DoubleLinkedList
 ##  Double Linked List Implementation
 
-*[Insert Build Status Image]*
+![Build Status Image](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework4/Homework4BuildImage.JPG)
 
 > **"A list is only as strong as its weakest link."**
 > — Donald Knuth

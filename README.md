@@ -2,7 +2,7 @@
 Author: Joseph Berlucchi
 
 Email: joeberlucchi2019@gmail.com
-## Table of Contents (edu.miracosta.cs113):
+## Table of Contents:
 | Name | Location | Description | Created At | Due Date |
 |------|----------|-------------|------------|------------|
 |Homework 4|[edu.miracosta.cs113.homework4](https://github.com/immunooo/Homework/tree/master/src/edu/miracosta/cs113/homework4)|Create DoubleLinkedList class and ListIterator Class|10/17/2020|10/17/2020|

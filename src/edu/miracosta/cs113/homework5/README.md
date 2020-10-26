@@ -1,7 +1,7 @@
 #StackQueue
 Stack + Queue Implementation, Solving Palindrome using Stacks
 
-**[//Insert Build Status Image//]**
+[Build Status Image](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework5/Homework5StackRun.JPG)
 
 > **"I will, in fact, claim that the difference between a bad programmer and a good one is whether [they] consider [their] code or [their] data structures more important. Bad programmers worry about the code. Good programmers worry about data structures and their relationships."**
 > — Linus Torvalds [recent news on Linus Torvalds](https://www.newyorker.com/science/elements/after-years-of-abusive-e-mails-the-creator-of-linux-steps-aside)
@@ -17,11 +17,13 @@ You are provided with a `StackInterface` to **implement your stack, make sure to
 
 Make sure to **provide a sequence diagram** for `isPalindrome()`, it should include more details than just the steps outlined above.  Add the image (PNG, JPEG, etc.) in markdown in the space below:
 
-**[//Insert Sequence Diagram//]**
+[Sequence Diagram](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework5/Homework5Sequence.png)
 
 ----------
 
 Additionally, **provide your implementation for a `CircularArrayQueue<E>` based on the `java.util.Queue` interface**, passing the JUnit tests provided for the following six methods.
+
+[Build Status Image](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework5/Homework5CircularRun.JPG)
 
 `Queue` interface [methods](https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html) to implement:
 

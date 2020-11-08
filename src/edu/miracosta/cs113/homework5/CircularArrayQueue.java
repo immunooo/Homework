@@ -48,7 +48,6 @@ public class CircularArrayQueue<E> implements Queue<E>{
      * Doubles the capacity of the array.
      */
 	private void reallocate() {
-		if(size == capacity) {
 			Object[] temp = new Object[capacity * 2];
 			
 			for(int i = 0; i < size; i++) {
@@ -60,7 +59,6 @@ public class CircularArrayQueue<E> implements Queue<E>{
 			rear = size - 1;
 			capacity = capacity * 2;
 			
-		}
 	}
 	
 	@Override

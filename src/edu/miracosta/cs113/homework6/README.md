@@ -47,10 +47,10 @@ The two methods will be tested using 5 cent increments between 5 cents and 30 ce
 ![Image of huffman code tree](doc/problemImages/huffman.png)
 
   - Write the binary string for the message "scissors cuts paper":
-    - Binary String = `insert here`
+    - Binary String = **00110000001100011001110010010001111100000000011101001111110000110101000010100010**
   - Decode the following binary string using the tree above:
   `1100010001010001001011101100011111110001101010111101101001`
-    - Decoded String = `insert here`
+    - Decoded String = **WHERE IS WALDO**
 
 3. For each of the two trees shown below, answer these questions:
 - What is its height?
@@ -70,19 +70,19 @@ The two methods will be tested using 5 cent increments between 5 cents and 30 ce
 
 ![Image of tree for problem 4A](doc/problemImages/problem4A.png)
 
-`insert answers here`
+**complete**
 
 ![Image of tree for problem 4B](doc/problemImages/problem4B.png)
 
-`insert answers here`
+**If boxes empty: complete; IF not: full**
 
 ![Image of tree for problem 4C](doc/problemImages/problem4C.png)
 
-`insert answers here`
+**full**
 
 ![Image of tree for problem 4A](doc/problemImages/huffman.png)
 
-`insert answers here`
+**full**
 
 5. Represent the general tree below as a binary tree
 

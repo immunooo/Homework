@@ -33,14 +33,15 @@ The two methods will be tested using 5 cent increments between 5 cents and 30 ce
 1. Draw binary expression trees for the following infix expressions.  Your trees should enforce the Java rules for operator evaluation (higher-precedence operators before lower-precedence operators and left associativity.) Note: they should also preserve the order seen in the expressions.
   - `x / y + a - b * c`
 
-  **[//Insert image here//]**
+  ![Expression Tree](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework6/images/ET1.JPG)
+  
   - `(x * a) - y / b * (c + d)`
   
-  **[//Insert image here//]**
+  ![Expression Tree](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework6/images/ET2.JPG)
   
   - `(x + (a * (b - c)))/ d`
   
-  **[//Insert image here//]**
+  ![Expression Tree](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework6/images/ET3.JPG)
   
 2. Using the Huffman tree in the figure below:
 
@@ -60,11 +61,11 @@ The two methods will be tested using 5 cent increments between 5 cents and 30 ce
 
 ![Image of tree for problem 3A](doc/problemImages/problem3A.png)
 
-`insert answers here`
+![Tree 3A](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework6/images/3A.JPG)
 
 ![Image of tree for problem 3B](doc/problemImages/problem3B.png)
 
-`insert answers here`
+![Tree 3B](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework6/images/3B.JPG)
 
 4. For the binary trees shown below, indicat whether each tree is full, perfect, complete, or none of the above (note that a tree could be more than one of these!)
 
@@ -88,7 +89,7 @@ The two methods will be tested using 5 cent increments between 5 cents and 30 ce
 
 ![Image of general tree for problem 5](doc/problemImages/problem5-general.png)
 
-**[//Insert image here//]**
+![General Tree](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework6/images/Q5.JPG)
 
 
 ----------

@@ -1,7 +1,7 @@
 # RecursionTrees
 ## Recursion and Tree Problems
 
-**[//Insert Build Status Image//]**
+![Build Status Image](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework6/images/TestCases.JPG)
 
 ## [Recursive] Change Calculator (based on Programming Project #7, pg. 291):
 
@@ -9,7 +9,7 @@
 
 Using the provided ChangeCalculator class, implement the recursive method `calculateChange(int)` which will dispense change for a given amount of money. The method will **display and return** the total number of combinations of quarters, dimes, nickels, and pennies that equal the desired amount and all of the combinations as well. Avoid duplication.
 
-If you choose to use a data structure, it must be one that we've covered and you must thoroughly justify why it was the best choice (based on run-time efficiency): **[//here//]**
+If you choose to use a data structure, it must be one that we've covered and you must thoroughly justify why it was the best choice (based on run-time efficiency): **I used array lists because insertion over time is O(3), traversing is O(n), but contains is O(n) which is called many times so its like O(n^2).**
 
 Next, you will implement the method `printCombinationsToFile(int)`, which should contain a call to the recursive solution that you created. Creating a text file in the program's directory named `"CoinCombinations.txt"`, this method will write each combination produced to separate lines. This file will be read by the tester class to verify that your recursive solution avoids duplicate values.
 

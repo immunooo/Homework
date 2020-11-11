@@ -1,6 +1,10 @@
 package edu.miracosta.cs113.homework6;
 
 import java.util.ArrayList;
+import java.io.File;  // Import the File class
+import java.io.FileOutputStream;
+import java.io.IOException;  // Import the IOException class to handle errors
+import java.io.PrintStream;
 
 /**
  * ChangeCalculator : Class containing the recursive method calculateChange, which determines and prints all
@@ -13,8 +17,10 @@ import java.util.ArrayList;
  * verify that all given coin combinations are unique.
  */
 public class ChangeCalculator {
-
-    /**
+	
+	public static int[] coins = {25, 10, 5, 1}; // Coin values
+	public static ArrayList<String> coinCombos = new ArrayList<String>();// ArrayList to store the coin combonations
+	/**
      * Wrapper method for determining all possible unique combinations of quarters, dimes, nickels, and pennies that
      * equal the given monetary value in cents.
      *
@@ -26,34 +32,52 @@ public class ChangeCalculator {
      * @param cents a monetary value in cents
      * @return the total number of unique combinations of coins of which the given value is comprised
      */
-	public static int[] coins = {1, 5, 10, 25};
-	//Indexes: 0 = root, 1 = quarters, 2 = dimes, 3 = nickles, 4 = pennies.
-	
-	public static void main(String[] args) {
-		System.out.println(calculateChange(90));
-	}
-	
-	//Not done
     public static int calculateChange(int cents) {
         // TODO:
         // Implement a recursive solution following the given documentation.
-    	int count = 0;
-        for (int i = 0; i <= cents / 25; i++) {
-            for (int j = 0; j <= cents / 10; j++) {
-                for (int k = 0; k <= cents / 5; k++) {
-                    for (int l = 0; l <= cents; l++) {
-                        int v = i * 25 + j * 10 + k * 5 + l;
-                        if (v == cents) {
-                            count++;
-                        } else if (v > cents) {
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        return count;
-
+    	
+    	coinCombos.clear();//Make sure all combos are clear
+    	change(cents, 0, 0, 0, cents);
+    	
+    	for(int i = coinCombos.size() - 1; i >= 0; i--) {//Prints combos in ascending order (# of coins)
+    		System.out.println(coinCombos.get(i));
+    	}
+    	return coinCombos.size();//Returns the amount of combos
+    }
+    
+    /**
+     *Recursive method that adds combos to the array list.
+     *
+     * @param cents a monetary value in cents
+     * @param quarters amount of quarters
+     * @param dimes amount of dimes
+     * @param nickels amount of nickels
+     * @param pennys amount of pennys
+     * 
+     */
+    private static void change(int cents, int quarters, int dimes, int nickels, int pennys) {
+    	//if the total value of coins > the cents given, return
+    	if(quarters * coins[0] + dimes * coins[1] + nickels * coins[2] + pennys * coins[3] > cents) {
+    		return;
+    	}
+    	
+    	String combo = "[" + quarters + ", " +  dimes + ", " +nickels+ ", " + pennys +"]";
+    	
+    	//Adds the combo to the array list if its unique
+    	if(!coinCombos.contains(combo)) {
+    		coinCombos.add(combo);
+    	}
+    	
+    	//Goes through every combo
+    	if(pennys >= 5) {
+    		change(cents, quarters, dimes, nickels + 1, pennys - 5);
+    	}
+    	if(pennys >= 10) {
+    		change(cents, quarters, dimes + 1, nickels, pennys - 10);
+    	}
+    	if(pennys >= 25) {
+    		change(cents, quarters + 1, dimes, nickels , pennys - 25);
+    	}
     }
 
     /**
@@ -68,6 +92,22 @@ public class ChangeCalculator {
     public static void printCombinationsToFile(int cents) {
         // TODO:
         // This when calculateChange is complete. Note that the text file must be created within this directory.
+    	coinCombos.clear();
+    	calculateChange(cents);
+    	try {
+    		File outputFile = new File("CoinCombinations.txt");
+    		if(outputFile.createNewFile()) {
+    			System.out.println("File successfully created!");
+    		} 
+    		
+    		PrintStream outputStream = new PrintStream(new FileOutputStream(outputFile));
+			for(int i = coinCombos.size() - 1; i >= 0; i--) {
+	    		outputStream.println(coinCombos.get(i));
+	    	}
+			outputStream.close();
+    	} catch(IOException e) {
+    		System.out.println("cannot open file");
+    	}
     }
 
 } // End of class ChangeCalculator

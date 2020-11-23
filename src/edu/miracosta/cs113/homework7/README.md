@@ -1,9 +1,9 @@
 # MorseCodeTree
 ## Morse Code translator + extending Binary Tree
 
-![Binary Tree Test](https://github.com/immunooo/Homework/master/src/edu/miracosta/cs113/homework7/HW7BTT.JPG)
+![Binary Tree Test](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework7/HW7BTT.JPG)
 
-![Morse Code Tree Test](https://github.com/immunooo/Homework/master/src/edu/miracosta/cs113/homework7/HW7MCTT.JPG)
+![Morse Code Tree Test](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework7/HW7MCTT.JPG)
 
 **International Morse Code, A-Z**
 

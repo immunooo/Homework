@@ -1,7 +1,8 @@
 # MorseCodeTree
 ## Morse Code translator + extending Binary Tree
 
-**[//Insert Build Status Image//]**
+![Binary Tree Test](https://github.com/immunooo/Homework/edit/master/src/edu/miracosta/cs113/homework7/HW7BTT.JPG)
+![Morse Code Tree Test](https://github.com/immunooo/Homework/edit/master/src/edu/miracosta/cs113/homework7/HW7MCTT.JPG)
 
 **International Morse Code, A-Z**
 
@@ -35,6 +36,5 @@ Morse code is a common code that is used to encode messages consisting of letter
 	- Note: Do not override `readBinaryTree()` method, as that works completely differently! Instead, create a `readMorseCodeTree()` method (it is simpler, doesn't need to be recursive as you can see from the description above).
 - JUnit tests that test every letter, A-Z, is translated from morse code using the tree correctly, as well as a few multi-letter tests (other tests besides `**** * *-** *-** --- *-- --- *-* *-** -**`  translating to `helloworld`, etc.) have been provided in `MorseCodeTreeTest`. Given this, consider how your `MorseCodeTree` methods deal with errors like invalid characters (characters other than * or -)?
 - **Provide a driver menu program** that builds the `MorseCodeTree` and asks the user if they want to 1) test output for all morse code letters with their respective translated alphabet letters (make sure you are using the `MorseCodeTree` to do the actual translation, output as a nicely formatted table. Doesn't have to be alphabetized but that would be nice for the user :smiley:), 2) enter an input textfile name with morse code to decode and output the translated text to the console, and 3) enter in a line of morse code through the console to decode morse code and output the translated text to the console.
-
 
 > ***NOTE:*** Read the instructions carefully, already know the code from the slides for reading from a text file and doing a preorder traversal cannot directly solve this homework!  The preorder traversal method may help error check to see if your tree is being built correctly, however!  Also, you need not implement `Serializable` for your `MorseCodeTree` but you're encouraged to, since the code is straightforward and very much like the slides.

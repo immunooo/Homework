@@ -73,6 +73,15 @@ public class BinaryTree<E> implements Serializable{
 	}
 	
 	/**
+	 *  
+	 * @return the root node
+	 */
+	public Node<E> getRootNode() {
+		return root;
+	}
+	
+	
+	/**
 	 * 
 	 * @return the left subtree
 	 */
@@ -148,6 +157,22 @@ public class BinaryTree<E> implements Serializable{
 			this.data = data;
 			this.left = null;
 			this.right = null;
+		}
+		
+		public Node<E> getRightNode() {
+			return right;
+		}
+		
+		public Node<E> getLeftNode() {
+			return left;
+		}
+		
+		public void setRightNode(Node<E> right) {
+			this.right = right;
+		}
+		
+		public void setLeftNode(Node<E> left) {
+			this.left= left;
 		}
 		
 		public String toString() {

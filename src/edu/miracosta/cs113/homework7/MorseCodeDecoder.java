@@ -1,5 +1,7 @@
 package edu.miracosta.cs113.homework7;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -22,7 +24,8 @@ public class MorseCodeDecoder {
 					break;
 				
 				case("2"):
-					
+					input.nextLine();
+					enterFile(mct, input);// try: src/edu/miracosta/cs113/homework7/code.txt
 					break;
 				
 				case("3"):
@@ -57,6 +60,28 @@ public class MorseCodeDecoder {
 		} catch(Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
+	}
+	
+	public static void enterFile(MorseCodeTree mct, Scanner input) {
+		System.out.print("Please enter file path: ");
+		String fileName = input.nextLine();
+		try {
+			Scanner fileScan = new Scanner(new File(fileName));
+			String morseCode = "";
+			while(fileScan.hasNext()) {
+				morseCode += fileScan.next() + " ";
+			}
+			
+			try {
+				System.out.println("Decoded: " + mct.translateFromMorseCode(morseCode));
+				
+			} catch(Exception e) {
+				System.out.println("Error: " + e.getMessage());
+			}
+		} catch(IOException e) {
+			System.out.println("File could not be found or opened.");
+		}
+
 	}
 	
 	public static String getMorseCode(MorseCodeTree mct) {

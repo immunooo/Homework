@@ -116,23 +116,24 @@ public class MorseCodeTree extends BinaryTree<Character> {
     	}
 	}
     
-    private ArrayList<String> combos = new ArrayList<String>();
     public ArrayList<String> getCombos(){
-    	loadCombos(this, "");
+    	ArrayList<String> combos = new ArrayList<>();
+    	loadCombos( combos, this, "");
     	return combos;
     }
     
-    private void loadCombos(BinaryTree<Character> tree, String combo){
+    //Pre order traversal
+    private void loadCombos(ArrayList<String> combos, BinaryTree<Character> tree, String combo){
     	if(tree != null && !combos.contains(tree.getData() + " - " + combo) && tree.getData() != '0') {
     		combos.add(tree.getData() + ": " + combo);
     	}
     	
     	if(tree.getLeftSubtree() != null) {
-    		loadCombos(tree.getLeftSubtree(),  combo + "*" );
+    		loadCombos(combos, tree.getLeftSubtree(),  combo + "*" );
     	}
     	
     	if(tree.getRightSubtree() != null ) {
-    		loadCombos(tree.getRightSubtree(), combo + "-");
+    		loadCombos(combos, tree.getRightSubtree(), combo + "-");
     	}
     	
     }

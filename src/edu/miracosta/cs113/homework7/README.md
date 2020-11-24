@@ -4,7 +4,7 @@
 ![Binary Tree Test](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework7/HW7BTT.JPG)
 ![Morse Code Tree Test](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework7/HW7MCTT.JPG)
 
-**#Demo Driver:**
+**Demo Driver:**
 
 ![Demo Driver](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework7/HW7RUN.JPG)
 

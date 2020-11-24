@@ -2,6 +2,7 @@ package edu.miracosta.cs113.homework7;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -114,6 +115,27 @@ public class MorseCodeTree extends BinaryTree<Character> {
     		
     	}
 	}
+    
+    private ArrayList<String> combos = new ArrayList<String>();
+    public ArrayList<String> getCombos(){
+    	loadCombos(this, "");
+    	return combos;
+    }
+    
+    private void loadCombos(BinaryTree<Character> tree, String combo){
+    	if(tree != null && !combos.contains(tree.getData() + " - " + combo) && tree.getData() != '0') {
+    		combos.add(tree.getData() + ": " + combo);
+    	}
+    	
+    	if(tree.getLeftSubtree() != null) {
+    		loadCombos(tree.getLeftSubtree(),  combo + "*" );
+    	}
+    	
+    	if(tree.getRightSubtree() != null ) {
+    		loadCombos(tree.getRightSubtree(), combo + "-");
+    	}
+    	
+    }
 
 
 } // End of class MorseCodeTree

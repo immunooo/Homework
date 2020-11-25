@@ -2,9 +2,11 @@ package edu.miracosta.cs113.homework8;
 
 import java.util.AbstractSet;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class HashTableChain<K, V> implements Map<K, V>{
@@ -78,7 +80,18 @@ public class HashTableChain<K, V> implements Map<K, V>{
 
 	@Override
 	public Set<K> keySet() {
-		return new EntrySet();
+		Set<K> keySet = new HashSet<K>(size());
+		for(int i = 0; i < table.length; i++) {
+			if(table[i] == null) {
+				continue;
+			}
+			for(Entry<K, V> entry : table[i]) {
+				if(entry != null) {
+					keySet.add(entry.getKey());
+				}
+			}
+		}
+		return keySet;
 	}
 
 	@Override
@@ -164,6 +177,24 @@ public class HashTableChain<K, V> implements Map<K, V>{
 	}
 	
 	@Override
+	public String toString() {
+		String output = "[";
+		for(int i = 0; i < table.length; i ++) {
+			if(table[i] == null) {
+				continue;
+			}
+			output += "Index=" + i + " ";
+			for(Entry<K, V> entry : table[i]) {
+				output += "-> " + entry ; 
+				
+			}
+			output += "\n";
+		}
+		return output;
+	}
+	
+	
+	@Override
 	public boolean equals(Object other) {
 		if(other == null) return false;
 		Map<K, V> temp = (Map) other;
@@ -183,7 +214,7 @@ public class HashTableChain<K, V> implements Map<K, V>{
 		
 	}
 	
-	private class Entry<K, V> {
+	private class Entry<K, V> implements Map.Entry<K, V>{
 		private K key;
 		private V value;
 		
@@ -192,35 +223,74 @@ public class HashTableChain<K, V> implements Map<K, V>{
 			this.value = value;
 		}
 		
+		@Override
 		public K getKey() {
 			return key;
 		}
 		
+		@Override
 		public V getValue() {
 			return value;
 		}
 		
+		@Override
 		public V setValue(V val) {
 			V oldVal = value;
 			value = val;
 			return oldVal;
 		}
+		
+		@Override
+		public String toString() {
+			return key + "=" + value;
+		}
 	}
 	
-	private class SetIterator implements Iterator {
+	private class SetIterator implements Iterator<Map.Entry<K, V>> {
 		
-		private V nextValue;
-
-		@Override
-		public boolean hasNext() {
-			// TODO Auto-generated method stub
-			return false;
+		private Entry<K, V> lastItemReturned;
+		private Iterator<Entry<K, V>> iterator;
+		private int index;
+		
+		public SetIterator() {
+			index = 0;
+			lastItemReturned = null;
+			iterator = null;
 		}
 
 		@Override
-		public Object next() {
-			// TODO Auto-generated method stub
-			return null;
+		public boolean hasNext() {
+			if(iterator != null && iterator.hasNext()) {
+				return true;
+			}
+			for(int i = index + 1; i < table.length; i++) {
+				if(table[i] != null) {
+					iterator = table[i].iterator();
+					index = i;
+					return iterator.hasNext();
+				}
+			}
+			
+			return false;
+			
+		}
+
+		@Override
+		public Map.Entry<K, V> next() {
+			if(iterator.hasNext()) {
+				lastItemReturned = iterator.next();
+				return lastItemReturned;
+			}
+			throw new NoSuchElementException();
+		}
+		
+		@Override
+		public void remove() {
+			if(lastItemReturned == null) {
+				throw new IllegalStateException();
+			}
+			iterator.remove();
+			lastItemReturned = null;
 		}
 		
 	}
@@ -228,7 +298,7 @@ public class HashTableChain<K, V> implements Map<K, V>{
 	private class EntrySet extends AbstractSet<Map.Entry<K, V>> {
 
 		@Override
-		public Iterator<java.util.Map.Entry<K, V>> iterator() {
+		public Iterator<Map.Entry<K, V>> iterator() {
 			return new SetIterator();
 		}
 
@@ -240,3 +310,4 @@ public class HashTableChain<K, V> implements Map<K, V>{
 	}
 
 }
+

@@ -108,6 +108,7 @@ public class HashTableChainTest {
 
         String setString = hashTable.entrySet().toString();
 
+        System.out.println(setString);
         boolean validSet = setString.equals(expectedSets[0]) || setString.equals(expectedSets[1]) ||
                 setString.equals(expectedSets[2]) || setString.equals(expectedSets[3]) ||
                 setString.equals(expectedSets[4]) || setString.equals(expectedSets[5]);

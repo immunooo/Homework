@@ -50,7 +50,6 @@ public class HashTableChain<K, V> implements Map<K, V>{
 
 	@Override
 	public Set<Map.Entry<K, V>> entrySet() {
-		// TODO Auto-generated method stub
 		return new EntrySet();
 	}
 
@@ -191,6 +190,20 @@ public class HashTableChain<K, V> implements Map<K, V>{
 			output += "\n";
 		}
 		return output;
+	}
+	
+	@Override
+	public int hashCode() {
+		Iterator<Map.Entry<K, V>> iter = entrySet().iterator();
+		int sum = 0;
+		
+		// "The hash code of a map is defined to be the sum of the hash codes of each entry in the map's entrySet() view"
+		while(iter.hasNext()) {
+			Map.Entry<K, V> temp = iter.next();
+			sum += temp.getKey().hashCode() + temp.getValue().hashCode();
+		}
+		return sum;
+		
 	}
 	
 	

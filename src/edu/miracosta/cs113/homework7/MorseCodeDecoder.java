@@ -112,16 +112,21 @@ public class MorseCodeDecoder {
      * @param input the scanner object to collect input file
      */
 	public static void enterFile(MorseCodeTree mct, Scanner input) {
+		//Prompts user to enter file
 		System.out.print("Please enter file path: ");
 		String fileName = input.nextLine();
 		try {
+			
+			//Opens file
 			Scanner fileScan = new Scanner(new File(fileName));
 			String morseCode = "";
 			
+			//Load the morse code string object with morse code from the file
 			while(fileScan.hasNext()) {
 				morseCode += fileScan.next() + " ";
 			}
 			
+			//Decodes the morse code
 			try {
 				System.out.println("Decoded: " + mct.translateFromMorseCode(morseCode));
 				

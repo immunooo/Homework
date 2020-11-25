@@ -52,22 +52,31 @@ public class ArrayListStack<E> implements StackInterface<E>{
 	
 	@Override
 	public boolean equals(Object other) {
+		
 		ArrayListStack<E> otherStack = (ArrayListStack<E>) other;
 		
+		//Base case for the equals 
 	    if (empty() && otherStack.empty()) {
 	    	return true; 
 	    }
 	    
+	    //Removes one element from both stacks
 	    E elementA = pop(); 
 	    E elementB = otherStack.pop(); 
 	    
+	    //Iteratesthrough all the elements in 
 	    try {
+	    	
+	    	//returns false if stack elements are not equal
 	    	if(!elementA.equals(elementB)) {
 	    		return false;
 	    	}
 	    	
+	    	//Recursive case
 	        return equals(otherStack); 
-	    } finally { // restore elements
+	        
+	    } finally { 
+	    	// restore elements into the stacks
 	        push(elementA); 
 	        otherStack.push(elementB);
 	    }

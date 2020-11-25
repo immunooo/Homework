@@ -159,22 +159,35 @@ public class BinaryTree<E> implements Serializable{
 			this.right = null;
 		}
 		
+		/**
+		 * Returns the right child of this node
+		 * 
+		 * @return the right node
+		 */
 		public Node<E> getRightNode() {
 			return right;
 		}
 		
+		/**
+		 * Returns the left child of this node
+		 * 
+		 * @return the left node
+		 */
 		public Node<E> getLeftNode() {
 			return left;
 		}
 		
+		/** Sets the right node to the argument node*/
 		public void setRightNode(Node<E> right) {
 			this.right = right;
 		}
 		
+		/** Sets the left node to the argument node*/
 		public void setLeftNode(Node<E> left) {
 			this.left= left;
 		}
 		
+		@Override
 		public String toString() {
 			return data.toString();
 		}

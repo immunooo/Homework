@@ -63,7 +63,7 @@ public class CircularArrayQueue<E> implements Queue<E>{
 	
 	@Override
 	public boolean add(E e) {
-		// here
+		//Throws exception if cant add more
 		if(size == capacity) {
 			throw new IllegalStateException();
 		}
@@ -81,11 +81,13 @@ public class CircularArrayQueue<E> implements Queue<E>{
 
 	@Override
 	public boolean offer(E e) {
-		
+		//Reallocates of element cannot be inserted
 		if(size == capacity) {
 			reallocate();
 		}
+		//Increase the size 
 		size++;
+		//Increment the rear
 		rear = (rear + 1) % capacity;
 		queueArr[rear] = e;
 		
@@ -103,9 +105,11 @@ public class CircularArrayQueue<E> implements Queue<E>{
 
 	@Override
 	public E poll() {
+		//Tries to return the removed element
 		try {
 			return remove();
 		} catch(NoSuchElementException e) {
+			//if it no element then return null
 			return null;
 		}
 	}
@@ -115,6 +119,7 @@ public class CircularArrayQueue<E> implements Queue<E>{
 		try {
 			return element();
 		} catch(NoSuchElementException e) {
+			//Kind of weird doing this but easier implementation
 			throw new NoSuchElementException();
 		} finally {
 			front++;
@@ -131,57 +136,51 @@ public class CircularArrayQueue<E> implements Queue<E>{
 	}
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		capacity = 1;
+		queueArr = new Object[capacity];
+		size = 0;
+		front = 0;
+		rear = capacity - 1;
 		
 	}
 	@Override
 	public boolean contains(Object o) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
 	public boolean containsAll(Collection<?> c) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
 	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
 	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
 	public boolean removeAll(Collection<?> c) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
 	public boolean retainAll(Collection<?> c) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 	@Override
 	public Object[] toArray() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
 	public <T> T[] toArray(T[] a) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

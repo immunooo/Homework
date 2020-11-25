@@ -47,13 +47,18 @@ public class PalindromeTester {
     	if(s == null){
     		throw new IllegalArgumentException();
     	}
+    	
+    	//removes whitespace and case sensitivity
     	s = s.toLowerCase();
     	s = s.replaceAll("\\s","");
     	
+    	//IF length = 1 return true
     	if(s.length()  < 2) {
     		return true;
     	}
     	
+    	//Finds index positions for starting of each stack
+    	//Ignores the middle character if stack is odd
     	int left, right;
     	if(s.length() % 2 == 0) {
     		left = s.length() / 2 - 1;
@@ -64,12 +69,17 @@ public class PalindromeTester {
     		right = s.length() / 2 + 1;
     	}
     	
+    	//Creates two stack objects
     	ArrayListStack<Character> leftSide = new ArrayListStack<Character>();
     	ArrayListStack<Character> rightSide = new ArrayListStack<Character>();
+    	
+    	//Loads the stacks traversing from the middle to both ends 
     	for(int i = right, j = left; i < s.length() && j >= 0 ; i++, j--) {
     		leftSide.push(s.charAt(j));
     		rightSide.push(s.charAt(i));
     	}
+    	
+    	//Returnes the equality of both stacks
     	return leftSide.equals(rightSide);
 
     } // End of method isPalindrome

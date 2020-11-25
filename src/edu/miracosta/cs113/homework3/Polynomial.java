@@ -48,24 +48,30 @@ public class Polynomial {
 	 * 
 	 */
 	public void addTerm(Term newTerm) {
+		//Traversed the terms 
 		for(int i = 0; i < terms.size(); i++) {
 			
+			//If it a term in the list with same exponents
 			if(terms.get(i).getExponent() == newTerm.getExponent()) {
 				
+				//set the term coeffient by adding it with new term coefficient
 				terms.get(i).setCoefficient(terms.get(i).getCoefficient() + newTerm.getCoefficient());
 				
+				//if term coeffient is zero remove it from the list
 				if(terms.get(i).getCoefficient() == 0) {
 					terms.remove(i);
 				} 
 				
 				return;
 				
+				//If it is greater than the current term
 			} else if(newTerm.compareTo(terms.get(i)) == 1) {
-				
+				//Add the new term infront 
 				terms.add(i, newTerm);
 				return;
 			}
 		}
+		//Add term at the end
 		terms.add(newTerm);
 		
 	}

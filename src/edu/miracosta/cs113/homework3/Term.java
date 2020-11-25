@@ -58,21 +58,28 @@ public class Term implements Comparable{
 		
 		String termCoefficient, termExponent;
 		
+		
 		if(term.contains("x")) {
 			
+			//gets coefficient
 			termCoefficient = term.substring(0, term.indexOf("x"));
 			
+			//Determines what to do with a - sign is the only thing in the coefficient
 			if(termCoefficient.equals("-")) {
 				termCoefficient = "-1";
 			}
+			
+			//Removes the + at beginning of coefficient
 			if(term.charAt(0) == '+') {
 				termCoefficient = termCoefficient.substring(1);
 			}
 			
+			//Determines whether nothing is infront of the coefficient
 			if(termCoefficient.equals("")) {
 				termCoefficient = "1";
 			}
 			
+			//Determines what to do with exponent
 			if(term.contains("^")) {
 				termExponent = term.substring(term.indexOf("^") + 1, term.length());
 			} else {
@@ -85,9 +92,11 @@ public class Term implements Comparable{
 		}
 		
 		try {
+			//Parses the coefficient and exponent
 			coefficient = Integer.parseInt(termCoefficient);
 			exponent = Integer.parseInt(termExponent);
 		} catch (NumberFormatException e){
+			//if the parse errors set it to a default values
 			coefficient = 0;
 			exponent = 0;
 		}

@@ -115,21 +115,29 @@ public class PolynomialCalculator {
 	 * 
 	 */
 	public static void addTerms(Scanner input, Polynomial poly) {
+		
 		System.out.println("Please input the term(s) you want to add or type \"clear\":");
+		
+		//Gets user input and removes all white space
 		String terms = input.nextLine();
 		terms = terms.replaceAll("\\s", "");
 		
 		if(!terms.equalsIgnoreCase("clear")) {
 		
 			int tempBeginning = 0;
+			//Traverses the string with all the terms
 			for(int i = 0; i < terms.length(); i++) {
+				
+				//Parses to get term objects
 				if( (terms.charAt(i) == '-' || terms.charAt(i) == '+') && i != 0) {
 					if(terms.charAt(i) == '-' && terms.charAt(i - 1) == '^' ) {
 						continue;
 					}
+					
 					poly.addTerm(terms.substring(tempBeginning, i));
 					tempBeginning = i;
 				}
+				
 				if(i == terms.length() - 1) {
 					poly.addTerm(terms.substring(tempBeginning, i + 1));
 					break;

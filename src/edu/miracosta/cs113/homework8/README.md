@@ -1,6 +1,8 @@
 # HashTable
 ## HashTableChain w/ Map
 
+![HashTableChain Test Cases](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/homework8/RunHashMapChain.JPG)
+
 Complete the `HashTableChain` from lecture/book (Section 7.4) so that it fully implements the [`java.util.Map`](https://docs.oracle.com/javase/7/docs/api/java/util/Map.html) interface (you may only omit/stub out the `putAll()` and `values()` methods, all other methods must be implemented).
 
 Also, complete the `SetIterator`, as described in section 7.5, for your `HashTableChain`.  This will required creating the class `EntrySet`, both of which will help you create the `entrySet()` method in the `Map` interface.  The `SetIterator` should behave as [iterators](https://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html) do:

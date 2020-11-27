@@ -5,7 +5,7 @@ Email: joeberlucchi2019@gmail.com
 ## Table of Contents:
 | Name | Location | Description | Created At | Due Date | Completed?|
 |------|----------|-------------|------------|------------|------------|
-|Huffman Trees|[edu.miracosta.cs113.HuffmanTrees](https://github.com/immunooo/Homework/tree/master/src/edu/miracosta/cs113/HuffmanTrees)|Huffman Tree Encoder|11/26/2020|12/18/2020|yes|
+|Huffman Trees|[edu.miracosta.cs113.HuffmanTrees](https://github.com/immunooo/Homework/tree/master/src/edu/miracosta/cs113/HuffmanTrees)|Huffman Tree Encoder|11/26/2020|12/18/2020|no|
 |Homework 8|[edu.miracosta.cs113.homework8](https://github.com/immunooo/Homework/tree/master/src/edu/miracosta/cs113/homework8)|Hash Map Chain|11/23/2020|12/7/2020|yes|
 |Homework 7|[edu.miracosta.cs113.homework7](https://github.com/immunooo/Homework/tree/master/src/edu/miracosta/cs113/homework7)|Morse Code Binary Tree|11/22/2020|11/30/2020|yes|
 |Homework 6|[edu.miracosta.cs113.homework6](https://github.com/immunooo/Homework/tree/master/src/edu/miracosta/cs113/homework6)|Recursive Change Problem and Tree questions|11/7/2020|11/7/2020|yes|

@@ -1,7 +1,11 @@
 HuffmanTree
 Huffman Tree Encoding + URL Request
 
+Test:
+
 ![Build Status Image](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/HuffmanTrees/TreeRun.JPG)
+
+Driver Example:
 
 ![Driver Run Sample](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/HuffmanTrees/DriverRun.JPG)
 

@@ -56,7 +56,7 @@ public class HuffmanTreeDriver {
 		}
 		
 		//Calculate bits from that file
-		double fileBits =  16 * TextFileGenerator.getNumChars(inputFilePath);
+		double fileBits =  8 * TextFileGenerator.getNumChars(inputFilePath);
 		BufferedReader in = null;
 		
 		//Get a buffered reader for the file
@@ -102,7 +102,7 @@ public class HuffmanTreeDriver {
 		double compressedFileBits = TextFileGenerator.getNumChars(outputFilePath);
 		
 		//Prints the percentage of compression
-		System.out.printf("\nPercentage of compression: %.2f%%", (fileBits / compressedFileBits * 100));
+		System.out.printf("\nPercentage of compression: %.2f", (fileBits / compressedFileBits));
 		
 		
 	}

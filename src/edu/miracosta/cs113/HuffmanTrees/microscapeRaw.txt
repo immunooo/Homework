@@ -1,0 +1,118 @@
+!DOCTYPE HTML PUBLIC W3CDTD HTML 3.2EN
+HTML
+HEAD
+  TITLEHTTP1.1 Test Web SiteTITLE
+  LINK relSTYLESHEET href........StyleSheetsAreaOverview.css typetextcss
+HEAD
+BODY BGCOLORFFFFFF TEXT000000
+P
+A HREF........IMG SRC........IconsWWWw3chome ALTW3C
+    BORDER0 HEIGHT48 WIDTH72A
+A HREF......IMG SRC........IconsWWWHTTP48x ALTHTTP BORDER0
+    HEIGHT48 WIDTH48A
+A HREF..IMG SRC........IconsWWWspeed ALTPerformance HEIGHT48
+    WIDTH48 BORDER0A
+H1
+  HTTP1.1 Test Web Site
+H1
+P
+DIV classintro
+  This test web site combines data HTML and GIF files made available on two
+  heavily accessed Web sites Netscape and Microsoft on December 7 1996.
+  For lack of better words we call the test site for Microscape.
+  UL
+    LI
+      A HREFDescriptionDescriptionA
+    LI
+      A HREFDownloadDownloadA
+  UL
+  P
+   Id Overview.htmlv 1.4 19980127 180640 frystyk Exp 
+DIV
+P
+  HR
+P
+The contents of the test site is strictly intended for testing of specific
+features in the HTTP1.1 protocol as described in the paper
+IA HREF..Pipeline.htmlNetwork Performance Effects of HTTP1.1 CSS1
+and PNGAI SIGCOMM97 and is made available as a help to the Web
+community. Please read the
+A HREFConsortiumLegaliprnotice.htmlCopyrightW3C Intellectual Property
+Notice and Legal DisclaimersA carefully before using this test material.
+H2
+  A NAMEDescriptionTest Site Description and SetupA
+H2
+P
+The Microscape web site contains a HTML page totaling 42KB with 42 inlined
+GIF images totaling 125KB. 40 GIF images are static and 2 are animated. The
+embedded images range in size from 70B to 40KB most are small with 19 images
+less than 1KB 7 images between 1KB and 2KB and 6 images between 2KB and
+3KB. While the resulting HTML page is larger and contains more images than
+might be typical such pages can be found on the Web.
+P
+The top page is called TTmicroscape.htmlTT or TTm.d.htmlTT in a
+deflated version and should be made available as
+PRE	httpltyour.servergtmicroscapemicroscape.htmlBR	httpltyour.servergtmicroscapem.d.html
+PRE
+P
+Make sure that your server exports the following content types and content
+encodings
+P
+CENTER
+  TABLE BORDER CELLSPACING0 ALIGNCenter WIDTH70
+    CAPTION
+      IContent Types and EncodingsI
+    CAPTION
+    TR
+      THFile SuffixTH
+      THContent TypeTH
+      THContent EncodingTH
+    TR
+    TR
+      TDP ALIGNCenter
+	htmlTD
+      TDP ALIGNCenter
+	texthtmlTD
+      TDP ALIGNCenter
+	noneTD
+    TR
+    TR
+      TDP ALIGNCenter
+	m.htmlTD
+      TDP ALIGNCenter
+	texthtmlTD
+      TDP ALIGNCenter
+	deflateTD
+    TR
+    TR
+      TDP ALIGNCenter
+	gifTD
+      TDP ALIGNCenter
+	imagegifTD
+      TDP ALIGNCenter
+	noneTD
+    TR
+  TABLE
+CENTER
+H2
+  A NAMEDownloadDownloadA
+H2
+UL
+  LI
+    A HREFmicroscape.tar.gzDownload the testsiteA and untar it preferably
+    on local disk where your Web server can see it.
+  LI
+    You can download the A HREF........Librarylatest libwww 5.1A
+    which has the latest features of
+    A HREF........LibraryOverview.htmlHTTP1.1 rev 01A. Check out
+    how the A HREF........Robotlibwww RobotA behaves
+    A HREF..LANon a LANA together with
+    A HREFhttpwww.apache.orgApacheA!
+UL
+P
+  HR
+ADDRESS
+  A HREF......PeopleFrystykHenrik Frystyk NielsenA BR
+   Id Overview.htmlv 1.4 19980127 180640 frystyk Exp 
+ADDRESS
+BODYHTML

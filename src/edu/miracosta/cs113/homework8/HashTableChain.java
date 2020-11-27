@@ -8,7 +8,12 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
-
+/**
+ * HashTableChain : Uses an array of liked lists to create a hash map
+ * 
+ * @author Joseph Berlucchi
+ * @version 1.0
+ */
 public class HashTableChain<K, V> implements Map<K, V>{
 	
 	private LinkedList<Entry<K, V>>[] table;

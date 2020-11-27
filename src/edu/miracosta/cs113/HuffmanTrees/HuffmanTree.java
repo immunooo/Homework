@@ -5,26 +5,43 @@ import java.util.Comparator;
 import java.util.Hashtable;
 import java.util.PriorityQueue;
 
-
+/**
+ * Huffman : Class that creates a huffman tree from a priority queue with given string
+ * 
+ * @author Joseph Berlucchi
+ * @version 1.0
+ */
 public class HuffmanTree implements HuffmanInterface {
 	
 	private PriorityQueue<BinaryTree<Node>> pq;
 	private ArrayList<Node> frequencyTable; 
 	private Hashtable<Character, String> encodeTable;
 	
+	/**
+	 * constuctor to create a Huffman tree from elements from the string argument
+	 * 
+	 * @param message the string object to be made a huffman tree
+	 */
 	public HuffmanTree(String message) {
 		pq = new PriorityQueue<BinaryTree<Node>>(new NodeCompare());
 		frequencyTable = new ArrayList<>();
 		encodeTable = new Hashtable<>();
 		
+		//Traverses the message as a character objects
 		for(char c : message.toCharArray()) {
+			
 			if(c == ' ') c = '_';
-
+			
+			
 			Node newNode = new Node(c);
+			
+			//If frequency table doesn't have the the element insert at the end
 			if(!frequencyTable.contains(newNode)) {
 				frequencyTable.add(newNode);
 				continue;
 			}
+			
+			//Traverses the table and updates the frequency
 			for(Node n : frequencyTable) {
 				if(n.equals(newNode)) {
 					n.setFreq(n.getFreq() + 1);
@@ -34,10 +51,11 @@ public class HuffmanTree implements HuffmanInterface {
 			
 		}
 		
+		//adds all the nodes as sub binary trees into the priority queue
 		for(Node n : frequencyTable) {
 			pq.add(new BinaryTree<Node>(n, null, null));
 		}
-
+		
 		loadTree();
 
 		
@@ -46,25 +64,38 @@ public class HuffmanTree implements HuffmanInterface {
 		
 	}
 	
+	/**
+	 * Inserts every code from a tree into a hash table
+	 * 
+	 * @param tree
+	 * @param s
+	 */
 	private void codesToHashtable(BinaryTree<Node> tree, String s) {
+		//If tree is a leaf insert key and vaue into the hash table
 		if(tree.isLeaf()) {
 			encodeTable.put(tree.getData().getChar(), s);
 			return;
 		}
+		//recursive case to traverse the tree
 		codesToHashtable(tree.getLeftSubtree(), s + "0");
 		codesToHashtable(tree.getRightSubtree(), s + "1");
 	}
 	
-	
+	/**loads the into a priority queue*/
 	private void loadTree() {
+		
 		while(pq.size() > 1) {
+			//Polls the first two from prio queue
 			BinaryTree<Node> first = pq.poll();
 			BinaryTree<Node> second = pq.poll();
 			
+			//Creates the parent node of these queues
 			Node newRootNode = new Node(first.getData().getFreq() + second.getData().getFreq());
+			//Adds a new tree to prio queue
 			pq.add(new BinaryTree<Node>(newRootNode, first, second));
 			
 		}
+		
 		codesToHashtable(pq.peek(), "");
 		
 	}
@@ -101,6 +132,8 @@ public class HuffmanTree implements HuffmanInterface {
 	@Override
 	public String encode(String message) {
 		String output = "";
+		
+		//For each character get the character value from the and append to the string
 		for(char c : message.toCharArray()) {
 			if(c == ' ') c = '_';
 			output += encodeTable.get(c);
@@ -108,6 +141,12 @@ public class HuffmanTree implements HuffmanInterface {
 		return output;
 	}
 	
+	/**
+	 * Node : Class that stores the frequency of a character
+	 * 
+	 * @author Joseph Berlucchi
+	 * @version 1.0
+	 */
 	private class Node implements Comparable<Node>{
 		private char c;
 		private int freq;
@@ -138,6 +177,7 @@ public class HuffmanTree implements HuffmanInterface {
 			this.freq = freq;
 		}
 		
+		/**Equality based on character*/
 		@Override
 		public boolean equals(Object o) {
 			if(o == null) return false;
@@ -150,7 +190,8 @@ public class HuffmanTree implements HuffmanInterface {
 		public String toString() {
 			return c + ":" + freq;
 		}
-
+		
+		/**Compares based on frequency*/
 		@Override
 		public int compareTo(Node o) {
 			if(o == null) {
@@ -166,8 +207,15 @@ public class HuffmanTree implements HuffmanInterface {
 		}
 	}
 	
+	/**
+	 * NodeCompare : Comparator object to compare root data from two bonary trees
+	 * 
+	 * @author Joseph Berlucchi
+	 * @version 1.0
+	 */
 	private class NodeCompare implements Comparator<BinaryTree<Node>>{
-
+		
+		/**Compares root data*/
 		@Override
 		public int compare(BinaryTree<Node> o1, BinaryTree<Node> o2) {
 			

@@ -3,6 +3,8 @@ Huffman Tree Encoding + URL Request
 
 ![Build Status Image](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/HuffmanTrees/TreeRun.JPG)
 
+![Driver Run Sample](https://github.com/immunooo/Homework/blob/master/src/edu/miracosta/cs113/HuffmanTrees/DriverRun.JPG)
+
 > One of the earliest forms of data compression was through Morse code, which allowed for the transmission of textual information over a wire. Each letter has been encoded based on its typical frequency of occurrence, with more common letters receiving shorter messages (such as the letter 'e' being represented as a single dot). A later version of data compression, called Huffman encoding, arose with the rise of the internet in the 1970s. Being dynamically generated on input data, Huffman encoding was an efficient means of data compression until the invention of the LZ77 algorithm in 1977.
 
 ## Huffman Tree Encoder

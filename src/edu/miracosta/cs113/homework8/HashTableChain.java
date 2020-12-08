@@ -126,7 +126,7 @@ public class HashTableChain<K, V> implements Map<K, V>{
 	
 	private void rehash() {
 		LinkedList<Entry<K, V>>[] temp = table;
-		table = new LinkedList[table.length * 2];
+		table = new LinkedList[table.length * 2 + 1];
 		numKeys = 0;
 		for(int i = 0; i < temp.length; i++) {
 			if(temp[i] == null) {

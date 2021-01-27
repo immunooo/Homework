@@ -1,7 +1,7 @@
 # Homework
 Author: Joseph Berlucchi
 
-Email: joeberlucchi2019@gmail.com
+Email: [redacted]
 ## Table of Contents:
 | Name | Location | Description | Created At | Due Date | Completed?|
 |------|----------|-------------|------------|------------|------------|
